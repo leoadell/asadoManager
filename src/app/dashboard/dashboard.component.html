@@ -1,0 +1,13 @@
+<div class="dashboard">
+      <p>
+            Welcome, {{email}}
+      </p>
+
+      <a (click)="logout()">Log Out</a>
+</div>
+
+<app-asado-list 
+      [listaAsados]="listaAsados"
+      (editar)="onEditar($event)" 
+      (borrar)="onBorrar($event)">
+</app-asado-list>

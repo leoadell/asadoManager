@@ -1,0 +1,16 @@
+<div class="register">
+  <h3>Register</h3>
+  <form #f (ngSubmit)="register(f)">
+    <input type="email" placeholder="E-mail" name="email" [(ngModel)]="user.email" autocomplete="off" />
+
+    <input type="text" placeholder="Name" name="name" [(ngModel)]="user.name" autocomplete="off" />
+
+    <input type="password" placeholder="Password" name="password" [(ngModel)]="user.password" autocomplete="off" />
+
+    <button>Register </button>
+  
+  <button class="btn-danger"  [routerLink] = "'/login'">Cancel</button>
+
+  <p class ="error">{{error}}</p>
+  </form>
+</div>
