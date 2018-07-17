@@ -1,5 +1,8 @@
 <form #f novalidate (ngSubmit)="addAsado(f)">
-  <input type="text" placeholder="asado name" required [(ngModel)]="asado.name" name="asado_name">
+  <input type="text" 
+    placeholder="asado name"
+    required [(ngModel)]="asado.name" 
+    name="asado_name">
   <input type="number" placeholder="asado price" required [(ngModel)]="asado.price" name="asado_price">
   <button type="submit">+ Add</button>
  </form>
