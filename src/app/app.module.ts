@@ -17,6 +17,21 @@ import { RegisterComponent } from './register/register.component';
 import { routingModule } from './app.routing';
 import { AsadoItemComponent } from './asado-item/asado-item.component';
 import {AngularFireAuthModule} from 'angularfire2/auth';
+import { HeaderComponent } from './header/header.component';
+import { AsadoDetailComponent } from './asado-detail/asado-detail.component';
+import { BodyComponent } from './body/body.component';
+//import { MaterialModule } from './material.module';
+import { 
+  MatToolbarModule, 
+  MatCheckboxModule,
+  MatIconModule,
+  MatCardModule,
+  MatListModule,
+  MatFormFieldModule,
+  MatSelectModule,
+  MatInputModule,
+  MatButtonModule,
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -27,10 +42,22 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
     LoginComponent,
     RegisterComponent,
     AsadoItemComponent,
+    HeaderComponent,
+    BodyComponent,
+    AsadoDetailComponent,
   ],
   imports: [
     routingModule,
     BrowserModule,
+    MatToolbarModule, 
+    MatCheckboxModule,
+    MatIconModule,
+    MatCardModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatButtonModule,
     AppRoutingModule,
     FormsModule,
     AngularFireAuthModule,

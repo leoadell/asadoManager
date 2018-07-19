@@ -1,9 +1,70 @@
-<form #f novalidate (ngSubmit)="addAsado(f)">
-  <input type="text" 
-    placeholder="asado name"
-    required [(ngModel)]="asado.name" 
-    name="asado_name">
-  <input type="number" placeholder="asado price" required [(ngModel)]="asado.price" name="asado_price">
-  
-  <button type="submit"><h3>+ Add</h3></button>
- </form>
+
+<form #f novalidate (ngSubmit)="editAsado(f)"> 
+  <mat-card>
+     
+    <mat-card-header>
+        <!-- <mat-icon>help</mat-icon> -->
+        <mat-card-title-group>
+            <mat-card-title>
+                Crear nuevo asado
+            </mat-card-title>
+            <mat-card-subtitle>
+                Ingrese datos del asado
+            </mat-card-subtitle>
+
+            <mat-card-actions align="end">
+              <button mat-raised-button color="accent" type="submit">
+                  <!-- [disabled]="!f.valid" -->
+                  <mat-icon>check</mat-icon>
+                  Crear
+              </button>
+              <button mat-raised-button type="button" (click)="goBack()" >
+                  <mat-icon>close</mat-icon>
+                  Cancelar
+              </button>
+            </mat-card-actions>
+        </mat-card-title-group>
+    </mat-card-header> 
+    
+    <mat-card-content>
+      
+      <p>
+        <mat-form-field>
+            <input matInput placeholder="Nombre" required [(ngModel)]="asado.name" name="asado.name">
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+            <input matInput placeholder="Descripción" required [(ngModel)]="asado.description" name="asado_description">
+        </mat-form-field>
+      </p>
+        
+      <p>
+        <mat-form-field>
+            <input matInput placeholder="Precio" required [(ngModel)]="asado.price" name="asado_price">
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+            <input matInput placeholder="Lugar" required [(ngModel)]="asado.place" name="asado_place">
+        </mat-form-field>
+      </p>
+    </mat-card-content>
+    
+  </mat-card>
+    <!-- <p>
+      <mat-form-field>
+        <textarea matInput placeholder="Textarea"></textarea>
+      </mat-form-field>
+    </p>  
+
+    <p>
+      <mat-form-field>
+        <mat-select placeholder="Select">
+          <mat-option value="option">Option</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p> -->
+</form>

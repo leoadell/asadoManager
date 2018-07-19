@@ -1,8 +1,18 @@
-<h3>Asado List</h3>
-<div style="align-self: center">
-  <ul>
-    <li *ngFor="let asado of listaAsados; index as i">
-    <app-asado-item></app-asado-item>
-    </li>
-  </ul>
-</div>
+<mat-card>
+  <mat-card-title>Asado List</mat-card-title>
+  <mat-card-content>
+    
+    <mat-list>
+      <mat-divider></mat-divider>
+      <app-asado-item *ngFor="let asado of asados" (gotoEvent)="showDetail($asado)" [asado]="asado"></app-asado-item>
+    </mat-list>
+    
+  </mat-card-content>
+  
+  <mat-card-actions align="end">
+    <button mat-fab color="primary"  (click)="btnAddClick();"><mat-icon>add</mat-icon></button>
+  </mat-card-actions>
+</mat-card>
+
+
+<router-outlet></router-outlet>
