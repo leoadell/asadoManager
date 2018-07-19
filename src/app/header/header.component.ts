@@ -20,6 +20,8 @@ export class HeaderComponent implements OnInit {
   logout = () => {
     this._fireAuth.auth.signOut()
       .then(() => {
+        sessionStorage.removeItem('isLoggedIn');
+        
         this._router.navigate(['/login']);
       });
   }

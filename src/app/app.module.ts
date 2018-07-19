@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
+import { AuthGuard } from './auth.guard';
+import { AuthenticationService } from './authentication.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,13 +19,13 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { routingModule } from './app.routing';
 import { AsadoItemComponent } from './asado-item/asado-item.component';
-import {AngularFireAuthModule} from 'angularfire2/auth';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { HeaderComponent } from './header/header.component';
 import { AsadoDetailComponent } from './asado-detail/asado-detail.component';
 import { BodyComponent } from './body/body.component';
 //import { MaterialModule } from './material.module';
-import { 
-  MatToolbarModule, 
+import {
+  MatToolbarModule,
   MatCheckboxModule,
   MatIconModule,
   MatCardModule,
@@ -49,7 +52,7 @@ import {
   imports: [
     routingModule,
     BrowserModule,
-    MatToolbarModule, 
+    MatToolbarModule,
     MatCheckboxModule,
     MatIconModule,
     MatCardModule,
@@ -73,7 +76,10 @@ import {
     }),
     AngularFirestoreModule.enablePersistence(),
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    AuthenticationService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

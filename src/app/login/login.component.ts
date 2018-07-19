@@ -25,10 +25,13 @@ export class LoginComponent implements OnInit {
   login = (form: NgForm) => {
     this._fireAuth.auth
       .signInWithEmailAndPassword(this.email, this.password)
-      .then(() => {
-        form.reset();
-        this._router.navigate(['/dashboard']);
-      })
+      .then(
+        res => {
+          sessionStorage.setItem('isLoggedIn', 'true');
+          form.reset();
+          this._router.navigate(['/dashboard']);
+        }
+      )
       .catch(err => this.error = err.message);
   }
 
