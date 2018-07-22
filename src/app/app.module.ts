@@ -23,6 +23,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { HeaderComponent } from './header/header.component';
 import { AsadoDetailComponent } from './asado-detail/asado-detail.component';
 import { BodyComponent } from './body/body.component';
+
 //import { MaterialModule } from './material.module';
 import {
   MatToolbarModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
@@ -7,11 +8,15 @@ import { AngularFirestore } from 'angularfire2/firestore';
   styleUrls: ['./asado-item.component.scss']
 })
 export class AsadoItemComponent implements OnInit {
+ 
   @Input() asado;
   @Output() gotoAsado = new EventEmitter();
   constructor() { }
 
+
   ngOnInit() {
   }
+
   click = () => this.gotoAsado.emit(this.asado);
+  
 }
