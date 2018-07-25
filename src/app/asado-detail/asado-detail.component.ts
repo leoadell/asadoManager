@@ -12,7 +12,8 @@ export class AsadoDetailComponent implements OnInit {
     name: "",
     price: 0,
     description: "",
-    place: ""
+    place: "",
+    id:""
   };
 
   constructor(
