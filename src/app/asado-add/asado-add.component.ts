@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 export interface Asado {
   name: string;
@@ -22,10 +22,17 @@ export class AsadoAddComponent implements OnInit {
   asado: Asado = { name: '', price: null };
   constructor(
     private _store: AngularFirestore,
-    private router: Router
+    private router: Router, 
+    private route:ActivatedRoute
   ) { }
 
   ngOnInit() {
+    {this.route.params.subscribe(data => {
+      this._store.collection('asados', ref => ref.where('id', '==', data.id))
+        .valueChanges()
+        .subscribe(asados => {
+          this.asado = asados[0];
+        });
   }
   editAsado = (form: NgForm) => {
     console.log("Adding asado:");

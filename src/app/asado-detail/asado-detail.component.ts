@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { ActivatedRoute, Router, Route } from '@angular/router';
+import { routerNgProbeToken } from '../../../node_modules/@angular/router/src/router_module';
 
 @Component({
   selector: 'app-asado-detail',
@@ -32,5 +33,4 @@ export class AsadoDetailComponent implements OnInit {
 }
 
 goBack = () => this.router.navigateByUrl('/dashboard');
-
 }

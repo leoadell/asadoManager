@@ -1,18 +1,21 @@
 <mat-card>
-  <mat-card-header>
-  <mat-card-title-group>
-      <mat-card-title>Detalle de asados</mat-card-title>
-  </mat-card-title-group>  
-  <mat-card-actions align="end">
-      <button mat-raised-button type="button" (click)="goBack()" >
-          <mat-icon>arrow_back</mat-icon>Cancelar
-      </button>
-  </mat-card-actions>
-</mat-card-header> 
-<mat-card-content>
-  <p>Nombre: {{ asado.name }}</p>
-  <p>Descripcion: {{ asado.description }}</p>
-  <p>Precio: {{ asado.price }}</p>
-  <p>Lugar: {{ asado.place }}</p>            
-</mat-card-content>
+    <mat-card-header>
+        <mat-card-title-group>
+            <mat-card-title>Detalle de asados</mat-card-title>
+        </mat-card-title-group>
+        <mat-card-actions align="end">
+            <button mat-raised-button type="button" (click)="goBack()">
+                <mat-icon>arrow_back</mat-icon>Cancelar
+            </button>
+            <button mat-raised-button type="button" [routerLink]="['/dashboard/asado/edit',asado.id]">
+                <mat-icon>edit</mat-icon>Editar
+            </button>
+        </mat-card-actions>
+    </mat-card-header>
+    <mat-card-content>
+        <p>Nombre: {{ asado.name }}</p>
+        <p>Descripcion: {{ asado.description }}</p>
+        <p>Precio: {{ asado.price }}</p>
+        <p>Lugar: {{ asado.place }}</p>
+    </mat-card-content>
 </mat-card>

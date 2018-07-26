@@ -17,12 +17,12 @@ const routes: Routes = [
         children: [
             {path:'', redirectTo:'asado',pathMatch:'full'  },
             { path: 'asado/add', component: AsadoAddComponent },
-            { path: 'asado/edit:id', component: AsadoAddComponent },
+            { path: 'asado/edit/:id', component: AsadoAddComponent },
             { path: 'asado', component: AsadoListComponent },
             { path: 'asado/detail/:id', component: AsadoDetailComponent }
         ]
-    },
-    { path: '**', redirectTo: '/login', pathMatch: 'full' }
+    }//,
+    //{ path: '**', redirectTo: '/login', pathMatch: 'full' }
 ];
 
 export const routingModule: ModuleWithProviders = RouterModule.forRoot(routes);
