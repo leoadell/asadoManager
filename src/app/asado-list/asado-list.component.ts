@@ -23,9 +23,9 @@ export class AsadoListComponent implements OnInit {
 
   showDetail = (asado) => {
     console.log(asado);
-    this.router.navigateByUrl('/asado/detail/' +asado.id); 
+    this.router.navigateByUrl('/dashboard/asado/detail/' +asado.id); 
     
   }
 
-  btnAddClick = () => this.router.navigateByUrl('/asado/add');
+  btnAddClick = () => this.router.navigateByUrl('/dashboard/asado/add');
 }
