@@ -12,11 +12,13 @@ const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'dashboard', component: DashboardComponent, canActivateChild: [AuthGuard] },
-    { path: 'asado/add', component: AsadoAddComponent },
+    { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard],//, childrens: [
+        { path: 'asado/add', component: AsadoAddComponent },
     { path: 'asado/edit:id', component: AsadoAddComponent },
     { path: 'asado', component: AsadoListComponent },
-    { path: 'asado/detail/:id', component: AsadoDetailComponent },
+    { path: 'asado/detail/:id', component: AsadoDetailComponent }
+    ,//] },
+
     { path: '**', redirectTo: '/login', pathMatch: 'full' }
 ];
 

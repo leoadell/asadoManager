@@ -4,7 +4,9 @@
 
     <mat-list>
       <mat-divider></mat-divider>
-      <app-asado-item *ngFor="let asado of asados" (gotoAsado)="showDetail($asado)" [asado]="asado"></app-asado-item> 
+      <app-asado-item *ngFor="let asado of asados" 
+      (gotoAsado)="showDetail($event)" 
+      [asado]="asado"></app-asado-item> 
     </mat-list>
 
   </mat-card-content>
