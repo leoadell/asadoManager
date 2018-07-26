@@ -5,7 +5,7 @@
     <mat-list>
       <mat-divider></mat-divider>
       <app-asado-item *ngFor="let asado of asados"
-       (gotoAsado)="showDetail($asado)" 
+       (gotoAsado)="showDetail($event)" 
        [asado]="asado">
       </app-asado-item> 
     </mat-list>
