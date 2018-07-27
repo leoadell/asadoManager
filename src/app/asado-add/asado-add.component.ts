@@ -4,14 +4,11 @@ import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
 export interface Asado {
-  name: string;
-  price: number;
-  guests?: any[];
-  recipes?: any[];
-  id?: string
-  token?: string,
+  name: string,
   description?: string,
-  place?: ''
+  price: number,
+  place?: '',
+  id?: string
 }
 @Component({
   selector: 'app-asado-add',
@@ -19,20 +16,26 @@ export interface Asado {
   styleUrls: ['./asado-add.component.scss']
 })
 export class AsadoAddComponent implements OnInit {
-  asado: Asado = { name: '', price: null };
+  asadoTitle: string = "Crear nuevo asado";
+  asadoSubtitle: string = "Ingrese datos del asado";
+  asado: any = { name: '', price: null };
+  
   constructor(
     private _store: AngularFirestore,
-    private router: Router, 
-    private route:ActivatedRoute
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    {this.route.params.subscribe(data => {
+    this.route.params.subscribe(data => {
       this._store.collection('asados', ref => ref.where('id', '==', data.id))
         .valueChanges()
         .subscribe(asados => {
           this.asado = asados[0];
         });
+    });
+
+
   }
   editAsado = (form: NgForm) => {
     console.log("Adding asado:");

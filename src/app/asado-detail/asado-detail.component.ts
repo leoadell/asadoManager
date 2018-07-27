@@ -16,6 +16,7 @@ export class AsadoDetailComponent implements OnInit {
     place: "",
     id:""
   };
+  
 
   constructor(
     private _store: AngularFirestore,

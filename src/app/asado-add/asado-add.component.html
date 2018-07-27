@@ -1,62 +1,58 @@
-
-<form #f novalidate (ngSubmit)="editAsado(f)"> 
+<form #f novalidate (ngSubmit)="editAsado(f)">
   <mat-card>
-     
-
-    
     <mat-card-header>
-        <!-- <mat-icon>help</mat-icon> -->
-        <mat-card-title-group>
-            <mat-card-title>
-                Crear nuevo asado
-            </mat-card-title>
-            <mat-card-subtitle>
-                Ingrese datos del asado
-            </mat-card-subtitle>
+      <!-- <mat-icon>help</mat-icon> -->
+      <mat-card-title-group>
+        <mat-card-title>
+          {{asadoTitle}}
+        </mat-card-title>
+        <mat-card-subtitle>
+          {{asadoSubtitle}}
+        </mat-card-subtitle>
 
-            <mat-card-actions align="end">
-              <button mat-raised-button color="accent" type="submit">
-                  <!-- [disabled]="!f.valid" -->
-                  <mat-icon>check</mat-icon>
-                  Crear
-              </button>
-              <button mat-raised-button type="button" (click)="goBack()" >
-                  <mat-icon>close</mat-icon>
-                  Cancelar
-              </button>
-            </mat-card-actions>
-        </mat-card-title-group>
-    </mat-card-header> 
-    
+        <mat-card-actions align="end">
+          <button mat-raised-button color="accent" type="submit">
+            <!-- [disabled]="!f.valid" -->
+            <mat-icon>check</mat-icon>
+            Crear
+          </button>
+          <button mat-raised-button type="button" (click)="goBack()">
+            <mat-icon>close</mat-icon>
+            Cancelar
+          </button>
+        </mat-card-actions>
+      </mat-card-title-group>
+    </mat-card-header>
+
     <mat-card-content>
-      
+
       <p>
         <mat-form-field>
-            <input matInput placeholder="Nombre" required [(ngModel)]="asado.name" name="asado.name">
+          <input matInput placeholder="Nombre" required [(ngModel)]="asado.name" name="asado.name">
         </mat-form-field>
       </p>
 
       <p>
         <mat-form-field>
-            <input matInput placeholder="Descripción" required [(ngModel)]="asado.description" name="asado_description">
-        </mat-form-field>
-      </p>
-        
-      <p>
-        <mat-form-field>
-            <input matInput placeholder="Precio" required [(ngModel)]="asado.price" name="asado_price">
+          <input matInput placeholder="Descripción" required [(ngModel)]="asado.description" name="asado_description">
         </mat-form-field>
       </p>
 
       <p>
         <mat-form-field>
-            <input matInput placeholder="Lugar" required [(ngModel)]="asado.place" name="asado_place">
+          <input matInput placeholder="Precio" required [(ngModel)]="asado.price" name="asado_price">
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input matInput placeholder="Lugar" required [(ngModel)]="asado.place" name="asado_place">
         </mat-form-field>
       </p>
     </mat-card-content>
-    
+
   </mat-card>
-    <!-- <p>
+  <!-- <p>
       <mat-form-field>
         <textarea matInput placeholder="Textarea"></textarea>
       </mat-form-field>
