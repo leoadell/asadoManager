@@ -14,9 +14,9 @@ export class AsadoDetailComponent implements OnInit {
     price: 0,
     description: "",
     place: "",
-    id:""
+    id: ""
   };
-  
+
 
   constructor(
     private _store: AngularFirestore,
@@ -24,14 +24,15 @@ export class AsadoDetailComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit() {this.route.params.subscribe(data => {
-    this._store.collection('asados', ref => ref.where('id', '==', data.id))
-      .valueChanges()
-      .subscribe(asados => {
-        this.asado = asados[0];
-      });
-  }); 
-}
+  ngOnInit() {
+    this.route.params.subscribe(data => {
+      this._store.collection('asados', ref => ref.where('id', '==', data.id))
+        .valueChanges()
+        .subscribe(asados => {
+          this.asado = asados[0];
+        });
+    });
+  }
 
-goBack = () => this.router.navigateByUrl('/dashboard');
+  goBack = () => this.router.navigateByUrl('/dashboard');
 }
