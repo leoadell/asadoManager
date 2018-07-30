@@ -24,8 +24,8 @@ export class AsadoAddComponent implements OnInit {
 
   constructor(
     private _store: AngularFirestore,
-    private router: Router,
-    private route: ActivatedRoute
+      private router: Router,
+      private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
