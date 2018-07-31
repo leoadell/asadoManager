@@ -35,6 +35,8 @@ import {
   MatInputModule,
   MatButtonModule,
 } from '@angular/material';
+import { InvitadoComponent } from './invitado/invitado.component';
+import { InvitadoListComponent } from './invitado-list/invitado-list.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import {
     AsadoItemComponent,
     HeaderComponent,
     AsadoDetailComponent,
+    InvitadoComponent,
+    InvitadoListComponent,
   ],
   imports: [
     routingModule,
