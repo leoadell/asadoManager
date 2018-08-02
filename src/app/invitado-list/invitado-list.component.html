@@ -1,3 +1,11 @@
-<p>
-  invitado-list works!
-</p>
+<mat-card>
+  <mat-card-title>Invitados</mat-card-title>
+  <mat-card-content>
+
+    <mat-list>
+      <mat-divider></mat-divider>
+      <app-invitado *ngFor="let invitado of invitados" [invitado]="invitado"></app-invitado> 
+    </mat-list>
+  </mat-card-content>
+  
+</mat-card>

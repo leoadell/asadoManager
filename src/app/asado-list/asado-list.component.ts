@@ -13,7 +13,10 @@ export class AsadoListComponent implements OnInit {
   asados = [ ];
   asadoDetail = null;
 
-  constructor(private _store: AngularFirestore, private router: Router) { }
+  constructor(
+    private _store: AngularFirestore, 
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this._store.collection('asados')
